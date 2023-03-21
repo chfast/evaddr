@@ -37,7 +37,7 @@ int main(int argc, const char* argv[])
 			std::cout << std::hex << "seckey: " << i << "\n";
 			for (int j = 12; j < 32; ++j)
 				std::cout << std::setfill('0') << std::setw(2) << int(h.bytes[j]);
-			std::cout << "\n";
+			std::cout << std::endl;
 		}
 	}
 
