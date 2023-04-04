@@ -31,8 +31,8 @@ int main(int argc, const char* argv[])
 		secp256k1_ec_pubkey_serialize(ctx, out, &out_len, &pubkey, SECP256K1_EC_UNCOMPRESSED);
 		h = ethash_keccak256(out + 1, 64);
 
-		// e7804e
-		if (h.bytes[12] == 0xEF && h.bytes[13] == 0x00 && h.bytes[14] == 0x01)
+		// e100...001e
+		if (h.bytes[12] == 0xe1 && h.bytes[13] == 0x00 && h.bytes[30] == 0x00 && h.bytes[31] == 0x1e)
 		{
 			std::cout << std::hex << "seckey: " << i << "\n";
 			for (int j = 12; j < 32; ++j)
